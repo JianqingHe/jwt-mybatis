@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.usoft.b2b.manage.mapper.PurcDeputyordersMapper">
+  <resultMap id="BaseResultMap" type="com.usoft.b2b.manage.domain.PurcDeputyorders">
+    <id column="deo_id" jdbcType="BIGINT" property="deoId" />
+    <result column="deo_actualpaydate" jdbcType="TIMESTAMP" property="deoActualpaydate" />
+    <result column="deo_actusdpayment" jdbcType="DOUBLE" property="deoActusdpayment" />
+    <result column="deo_bankaccount" jdbcType="VARCHAR" property="deoBankaccount" />
+    <result column="deo_bankaddress" jdbcType="VARCHAR" property="deoBankaddress" />
+    <result column="deo_bankcode" jdbcType="VARCHAR" property="deoBankcode" />
+    <result column="deo_bankname" jdbcType="VARCHAR" property="deoBankname" />
+    <result column="deo_code" jdbcType="VARCHAR" property="deoCode" />
+    <result column="deo_companyname" jdbcType="VARCHAR" property="deoCompanyname" />
+    <result column="deo_currency" jdbcType="VARCHAR" property="deoCurrency" />
+    <result column="deo_customer" jdbcType="VARCHAR" property="deoCustomer" />
+    <result column="deo_date" jdbcType="TIMESTAMP" property="deoDate" />
+    <result column="deo_deliverydate" jdbcType="TIMESTAMP" property="deoDeliverydate" />
+    <result column="deo_deliverymethod" jdbcType="VARCHAR" property="deoDeliverymethod" />
+    <result column="deo_deputyname" jdbcType="VARCHAR" property="deoDeputyname" />
+    <result column="deo_deputyuu" jdbcType="BIGINT" property="deoDeputyuu" />
+    <result column="deo_downloadstatus" jdbcType="VARCHAR" property="deoDownloadstatus" />
+    <result column="deo_enaddress" jdbcType="VARCHAR" property="deoEnaddress" />
+    <result column="deo_enfax" jdbcType="VARCHAR" property="deoEnfax" />
+    <result column="deo_entrydate" jdbcType="TIMESTAMP" property="deoEntrydate" />
+    <result column="deo_entrystatus" jdbcType="VARCHAR" property="deoEntrystatus" />
+    <result column="deo_enuu" jdbcType="BIGINT" property="deoEnuu" />
+    <result column="deo_erpdate" jdbcType="TIMESTAMP" property="deoErpdate" />
+    <result column="deo_erpid" jdbcType="BIGINT" property="deoErpid" />
+    <result column="deo_goodspacking" jdbcType="VARCHAR" property="deoGoodspacking" />
+    <result column="deo_legalrepresent" jdbcType="VARCHAR" property="deoLegalrepresent" />
+    <result column="deo_madealcode" jdbcType="VARCHAR" property="deoMadealcode" />
+    <result column="deo_madealdate" jdbcType="TIMESTAMP" property="deoMadealdate" />
+    <result column="deo_orderamount" jdbcType="DOUBLE" property="deoOrderamount" />
+    <result column="deo_otherdata" jdbcType="VARCHAR" property="deoOtherdata" />
+    <result column="deo_paycomaddress" jdbcType="VARCHAR" property="deoPaycomaddress" />
+    <result column="deo_paycomname" jdbcType="VARCHAR" property="deoPaycomname" />
+    <result column="deo_paydate" jdbcType="TIMESTAMP" property="deoPaydate" />
+    <result column="deo_paydeldate" jdbcType="TIMESTAMP" property="deoPaydeldate" />
+    <result column="deo_paymentcomenuu" jdbcType="BIGINT" property="deoPaymentcomenuu" />
+    <result column="deo_paymentdate" jdbcType="TIMESTAMP" property="deoPaymentdate" />
+    <result column="deo_paymentmethod" jdbcType="VARCHAR" property="deoPaymentmethod" />
+    <result column="deo_paymethod" jdbcType="VARCHAR" property="deoPaymethod" />
+    <result column="deo_pickupdate" jdbcType="VARCHAR" property="deoPickupdate" />
+    <result column="deo_pickupmethod" jdbcType="VARCHAR" property="deoPickupmethod" />
+    <result column="deo_print" jdbcType="SMALLINT" property="deoPrint" />
+    <result column="deo_prostatsus" jdbcType="VARCHAR" property="deoProstatsus" />
+    <result column="deo_prostatuscode" jdbcType="INTEGER" property="deoProstatuscode" />
+    <result column="deo_rate" jdbcType="DOUBLE" property="deoRate" />
+    <result column="deo_remark" jdbcType="VARCHAR" property="deoRemark" />
+    <result column="deo_requirepaydate" jdbcType="TIMESTAMP" property="deoRequirepaydate" />
+    <result column="deo_riskmethod" jdbcType="VARCHAR" property="deoRiskmethod" />
+    <result column="deo_salecode" jdbcType="VARCHAR" property="deoSalecode" />
+    <result column="deo_salepocode" jdbcType="VARCHAR" property="deoSalepocode" />
+    <result column="deo_shipdate" jdbcType="TIMESTAMP" property="deoShipdate" />
+    <result column="deo_status" jdbcType="VARCHAR" property="deoStatus" />
+    <result column="deo_statuscode" jdbcType="INTEGER" property="deoStatuscode" />
+    <result column="deo_taxpaymentmethod" jdbcType="VARCHAR" property="deoTaxpaymentmethod" />
+    <result column="deo_tervendaddress" jdbcType="VARCHAR" property="deoTervendaddress" />
+    <result column="deo_tervendor" jdbcType="VARCHAR" property="deoTervendor" />
+    <result column="deo_tervenduu" jdbcType="BIGINT" property="deoTervenduu" />
+    <result column="deo_totalamount" jdbcType="DOUBLE" property="deoTotalamount" />
+    <result column="deo_totalpayment" jdbcType="DOUBLE" property="deoTotalpayment" />
+    <result column="deo_usdpayment" jdbcType="DOUBLE" property="deoUsdpayment" />
+    <result column="deo_usertel" jdbcType="VARCHAR" property="deoUsertel" />
+    <result column="deo_useruu" jdbcType="BIGINT" property="deoUseruu" />
+    <result column="deo_vendorenuu" jdbcType="BIGINT" property="deoVendorenuu" />
+    <result column="deo_vendtel" jdbcType="VARCHAR" property="deoVendtel" />
+    <result column="deo_venduser" jdbcType="VARCHAR" property="deoVenduser" />
+    <result column="deo_venduseruu" jdbcType="BIGINT" property="deoVenduseruu" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    deo_id, deo_actualpaydate, deo_actusdpayment, deo_bankaccount, deo_bankaddress, deo_bankcode, 
+    deo_bankname, deo_code, deo_companyname, deo_currency, deo_customer, deo_date, deo_deliverydate, 
+    deo_deliverymethod, deo_deputyname, deo_deputyuu, deo_downloadstatus, deo_enaddress, 
+    deo_enfax, deo_entrydate, deo_entrystatus, deo_enuu, deo_erpdate, deo_erpid, deo_goodspacking, 
+    deo_legalrepresent, deo_madealcode, deo_madealdate, deo_orderamount, deo_otherdata, 
+    deo_paycomaddress, deo_paycomname, deo_paydate, deo_paydeldate, deo_paymentcomenuu, 
+    deo_paymentdate, deo_paymentmethod, deo_paymethod, deo_pickupdate, deo_pickupmethod, 
+    deo_print, deo_prostatsus, deo_prostatuscode, deo_rate, deo_remark, deo_requirepaydate, 
+    deo_riskmethod, deo_salecode, deo_salepocode, deo_shipdate, deo_status, deo_statuscode, 
+    deo_taxpaymentmethod, deo_tervendaddress, deo_tervendor, deo_tervenduu, deo_totalamount, 
+    deo_totalpayment, deo_usdpayment, deo_usertel, deo_useruu, deo_vendorenuu, deo_vendtel, 
+    deo_venduser, deo_venduseruu
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from purc$deputyorders
+    where deo_id = #{deoId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from purc$deputyorders
+    where deo_id = #{deoId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.usoft.b2b.manage.domain.PurcDeputyorders">
+    insert into purc$deputyorders (deo_id, deo_actualpaydate, deo_actusdpayment, 
+      deo_bankaccount, deo_bankaddress, deo_bankcode, 
+      deo_bankname, deo_code, deo_companyname, 
+      deo_currency, deo_customer, deo_date, 
+      deo_deliverydate, deo_deliverymethod, deo_deputyname, 
+      deo_deputyuu, deo_downloadstatus, deo_enaddress, 
+      deo_enfax, deo_entrydate, deo_entrystatus, 
+      deo_enuu, deo_erpdate, deo_erpid, 
+      deo_goodspacking, deo_legalrepresent, deo_madealcode, 
+      deo_madealdate, deo_orderamount, deo_otherdata, 
+      deo_paycomaddress, deo_paycomname, deo_paydate, 
+      deo_paydeldate, deo_paymentcomenuu, deo_paymentdate, 
+      deo_paymentmethod, deo_paymethod, deo_pickupdate, 
+      deo_pickupmethod, deo_print, deo_prostatsus, 
+      deo_prostatuscode, deo_rate, deo_remark, 
+      deo_requirepaydate, deo_riskmethod, deo_salecode, 
+      deo_salepocode, deo_shipdate, deo_status, 
+      deo_statuscode, deo_taxpaymentmethod, deo_tervendaddress, 
+      deo_tervendor, deo_tervenduu, deo_totalamount, 
+      deo_totalpayment, deo_usdpayment, deo_usertel, 
+      deo_useruu, deo_vendorenuu, deo_vendtel, 
+      deo_venduser, deo_venduseruu)
+    values (#{deoId,jdbcType=BIGINT}, #{deoActualpaydate,jdbcType=TIMESTAMP}, #{deoActusdpayment,jdbcType=DOUBLE}, 
+      #{deoBankaccount,jdbcType=VARCHAR}, #{deoBankaddress,jdbcType=VARCHAR}, #{deoBankcode,jdbcType=VARCHAR}, 
+      #{deoBankname,jdbcType=VARCHAR}, #{deoCode,jdbcType=VARCHAR}, #{deoCompanyname,jdbcType=VARCHAR}, 
+      #{deoCurrency,jdbcType=VARCHAR}, #{deoCustomer,jdbcType=VARCHAR}, #{deoDate,jdbcType=TIMESTAMP}, 
+      #{deoDeliverydate,jdbcType=TIMESTAMP}, #{deoDeliverymethod,jdbcType=VARCHAR}, #{deoDeputyname,jdbcType=VARCHAR}, 
+      #{deoDeputyuu,jdbcType=BIGINT}, #{deoDownloadstatus,jdbcType=VARCHAR}, #{deoEnaddress,jdbcType=VARCHAR}, 
+      #{deoEnfax,jdbcType=VARCHAR}, #{deoEntrydate,jdbcType=TIMESTAMP}, #{deoEntrystatus,jdbcType=VARCHAR}, 
+      #{deoEnuu,jdbcType=BIGINT}, #{deoErpdate,jdbcType=TIMESTAMP}, #{deoErpid,jdbcType=BIGINT}, 
+      #{deoGoodspacking,jdbcType=VARCHAR}, #{deoLegalrepresent,jdbcType=VARCHAR}, #{deoMadealcode,jdbcType=VARCHAR}, 
+      #{deoMadealdate,jdbcType=TIMESTAMP}, #{deoOrderamount,jdbcType=DOUBLE}, #{deoOtherdata,jdbcType=VARCHAR}, 
+      #{deoPaycomaddress,jdbcType=VARCHAR}, #{deoPaycomname,jdbcType=VARCHAR}, #{deoPaydate,jdbcType=TIMESTAMP}, 
+      #{deoPaydeldate,jdbcType=TIMESTAMP}, #{deoPaymentcomenuu,jdbcType=BIGINT}, #{deoPaymentdate,jdbcType=TIMESTAMP}, 
+      #{deoPaymentmethod,jdbcType=VARCHAR}, #{deoPaymethod,jdbcType=VARCHAR}, #{deoPickupdate,jdbcType=VARCHAR}, 
+      #{deoPickupmethod,jdbcType=VARCHAR}, #{deoPrint,jdbcType=SMALLINT}, #{deoProstatsus,jdbcType=VARCHAR}, 
+      #{deoProstatuscode,jdbcType=INTEGER}, #{deoRate,jdbcType=DOUBLE}, #{deoRemark,jdbcType=VARCHAR}, 
+      #{deoRequirepaydate,jdbcType=TIMESTAMP}, #{deoRiskmethod,jdbcType=VARCHAR}, #{deoSalecode,jdbcType=VARCHAR}, 
+      #{deoSalepocode,jdbcType=VARCHAR}, #{deoShipdate,jdbcType=TIMESTAMP}, #{deoStatus,jdbcType=VARCHAR}, 
+      #{deoStatuscode,jdbcType=INTEGER}, #{deoTaxpaymentmethod,jdbcType=VARCHAR}, #{deoTervendaddress,jdbcType=VARCHAR}, 
+      #{deoTervendor,jdbcType=VARCHAR}, #{deoTervenduu,jdbcType=BIGINT}, #{deoTotalamount,jdbcType=DOUBLE}, 
+      #{deoTotalpayment,jdbcType=DOUBLE}, #{deoUsdpayment,jdbcType=DOUBLE}, #{deoUsertel,jdbcType=VARCHAR}, 
+      #{deoUseruu,jdbcType=BIGINT}, #{deoVendorenuu,jdbcType=BIGINT}, #{deoVendtel,jdbcType=VARCHAR}, 
+      #{deoVenduser,jdbcType=VARCHAR}, #{deoVenduseruu,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.usoft.b2b.manage.domain.PurcDeputyorders">
+    insert into purc$deputyorders
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="deoId != null">
+        deo_id,
+      </if>
+      <if test="deoActualpaydate != null">
+        deo_actualpaydate,
+      </if>
+      <if test="deoActusdpayment != null">
+        deo_actusdpayment,
+      </if>
+      <if test="deoBankaccount != null">
+        deo_bankaccount,
+      </if>
+      <if test="deoBankaddress != null">
+        deo_bankaddress,
+      </if>
+      <if test="deoBankcode != null">
+        deo_bankcode,
+      </if>
+      <if test="deoBankname != null">
+        deo_bankname,
+      </if>
+      <if test="deoCode != null">
+        deo_code,
+      </if>
+      <if test="deoCompanyname != null">
+        deo_companyname,
+      </if>
+      <if test="deoCurrency != null">
+        deo_currency,
+      </if>
+      <if test="deoCustomer != null">
+        deo_customer,
+      </if>
+      <if test="deoDate != null">
+        deo_date,
+      </if>
+      <if test="deoDeliverydate != null">
+        deo_deliverydate,
+      </if>
+      <if test="deoDeliverymethod != null">
+        deo_deliverymethod,
+      </if>
+      <if test="deoDeputyname != null">
+        deo_deputyname,
+      </if>
+      <if test="deoDeputyuu != null">
+        deo_deputyuu,
+      </if>
+      <if test="deoDownloadstatus != null">
+        deo_downloadstatus,
+      </if>
+      <if test="deoEnaddress != null">
+        deo_enaddress,
+      </if>
+      <if test="deoEnfax != null">
+        deo_enfax,
+      </if>
+      <if test="deoEntrydate != null">
+        deo_entrydate,
+      </if>
+      <if test="deoEntrystatus != null">
+        deo_entrystatus,
+      </if>
+      <if test="deoEnuu != null">
+        deo_enuu,
+      </if>
+      <if test="deoErpdate != null">
+        deo_erpdate,
+      </if>
+      <if test="deoErpid != null">
+        deo_erpid,
+      </if>
+      <if test="deoGoodspacking != null">
+        deo_goodspacking,
+      </if>
+      <if test="deoLegalrepresent != null">
+        deo_legalrepresent,
+      </if>
+      <if test="deoMadealcode != null">
+        deo_madealcode,
+      </if>
+      <if test="deoMadealdate != null">
+        deo_madealdate,
+      </if>
+      <if test="deoOrderamount != null">
+        deo_orderamount,
+      </if>
+      <if test="deoOtherdata != null">
+        deo_otherdata,
+      </if>
+      <if test="deoPaycomaddress != null">
+        deo_paycomaddress,
+      </if>
+      <if test="deoPaycomname != null">
+        deo_paycomname,
+      </if>
+      <if test="deoPaydate != null">
+        deo_paydate,
+      </if>
+      <if test="deoPaydeldate != null">
+        deo_paydeldate,
+      </if>
+      <if test="deoPaymentcomenuu != null">
+        deo_paymentcomenuu,
+      </if>
+      <if test="deoPaymentdate != null">
+        deo_paymentdate,
+      </if>
+      <if test="deoPaymentmethod != null">
+        deo_paymentmethod,
+      </if>
+      <if test="deoPaymethod != null">
+        deo_paymethod,
+      </if>
+      <if test="deoPickupdate != null">
+        deo_pickupdate,
+      </if>
+      <if test="deoPickupmethod != null">
+        deo_pickupmethod,
+      </if>
+      <if test="deoPrint != null">
+        deo_print,
+      </if>
+      <if test="deoProstatsus != null">
+        deo_prostatsus,
+      </if>
+      <if test="deoProstatuscode != null">
+        deo_prostatuscode,
+      </if>
+      <if test="deoRate != null">
+        deo_rate,
+      </if>
+      <if test="deoRemark != null">
+        deo_remark,
+      </if>
+      <if test="deoRequirepaydate != null">
+        deo_requirepaydate,
+      </if>
+      <if test="deoRiskmethod != null">
+        deo_riskmethod,
+      </if>
+      <if test="deoSalecode != null">
+        deo_salecode,
+      </if>
+      <if test="deoSalepocode != null">
+        deo_salepocode,
+      </if>
+      <if test="deoShipdate != null">
+        deo_shipdate,
+      </if>
+      <if test="deoStatus != null">
+        deo_status,
+      </if>
+      <if test="deoStatuscode != null">
+        deo_statuscode,
+      </if>
+      <if test="deoTaxpaymentmethod != null">
+        deo_taxpaymentmethod,
+      </if>
+      <if test="deoTervendaddress != null">
+        deo_tervendaddress,
+      </if>
+      <if test="deoTervendor != null">
+        deo_tervendor,
+      </if>
+      <if test="deoTervenduu != null">
+        deo_tervenduu,
+      </if>
+      <if test="deoTotalamount != null">
+        deo_totalamount,
+      </if>
+      <if test="deoTotalpayment != null">
+        deo_totalpayment,
+      </if>
+      <if test="deoUsdpayment != null">
+        deo_usdpayment,
+      </if>
+      <if test="deoUsertel != null">
+        deo_usertel,
+      </if>
+      <if test="deoUseruu != null">
+        deo_useruu,
+      </if>
+      <if test="deoVendorenuu != null">
+        deo_vendorenuu,
+      </if>
+      <if test="deoVendtel != null">
+        deo_vendtel,
+      </if>
+      <if test="deoVenduser != null">
+        deo_venduser,
+      </if>
+      <if test="deoVenduseruu != null">
+        deo_venduseruu,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="deoId != null">
+        #{deoId,jdbcType=BIGINT},
+      </if>
+      <if test="deoActualpaydate != null">
+        #{deoActualpaydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deoActusdpayment != null">
+        #{deoActusdpayment,jdbcType=DOUBLE},
+      </if>
+      <if test="deoBankaccount != null">
+        #{deoBankaccount,jdbcType=VARCHAR},
+      </if>
+      <if test="deoBankaddress != null">
+        #{deoBankaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="deoBankcode != null">
+        #{deoBankcode,jdbcType=VARCHAR},
+      </if>
+      <if test="deoBankname != null">
+        #{deoBankname,jdbcType=VARCHAR},
+      </if>
+      <if test="deoCode != null">
+        #{deoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="deoCompanyname != null">
+        #{deoCompanyname,jdbcType=VARCHAR},
+      </if>
+      <if test="deoCurrency != null">
+        #{deoCurrency,jdbcType=VARCHAR},
+      </if>
+      <if test="deoCustomer != null">
+        #{deoCustomer,jdbcType=VARCHAR},
+      </if>
+      <if test="deoDate != null">
+        #{deoDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deoDeliverydate != null">
+        #{deoDeliverydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deoDeliverymethod != null">
+        #{deoDeliverymethod,jdbcType=VARCHAR},
+      </if>
+      <if test="deoDeputyname != null">
+        #{deoDeputyname,jdbcType=VARCHAR},
+      </if>
+      <if test="deoDeputyuu != null">
+        #{deoDeputyuu,jdbcType=BIGINT},
+      </if>
+      <if test="deoDownloadstatus != null">
+        #{deoDownloadstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="deoEnaddress != null">
+        #{deoEnaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="deoEnfax != null">
+        #{deoEnfax,jdbcType=VARCHAR},
+      </if>
+      <if test="deoEntrydate != null">
+        #{deoEntrydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deoEntrystatus != null">
+        #{deoEntrystatus,jdbcType=VARCHAR},
+      </if>
+      <if test="deoEnuu != null">
+        #{deoEnuu,jdbcType=BIGINT},
+      </if>
+      <if test="deoErpdate != null">
+        #{deoErpdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deoErpid != null">
+        #{deoErpid,jdbcType=BIGINT},
+      </if>
+      <if test="deoGoodspacking != null">
+        #{deoGoodspacking,jdbcType=VARCHAR},
+      </if>
+      <if test="deoLegalrepresent != null">
+        #{deoLegalrepresent,jdbcType=VARCHAR},
+      </if>
+      <if test="deoMadealcode != null">
+        #{deoMadealcode,jdbcType=VARCHAR},
+      </if>
+      <if test="deoMadealdate != null">
+        #{deoMadealdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deoOrderamount != null">
+        #{deoOrderamount,jdbcType=DOUBLE},
+      </if>
+      <if test="deoOtherdata != null">
+        #{deoOtherdata,jdbcType=VARCHAR},
+      </if>
+      <if test="deoPaycomaddress != null">
+        #{deoPaycomaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="deoPaycomname != null">
+        #{deoPaycomname,jdbcType=VARCHAR},
+      </if>
+      <if test="deoPaydate != null">
+        #{deoPaydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deoPaydeldate != null">
+        #{deoPaydeldate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deoPaymentcomenuu != null">
+        #{deoPaymentcomenuu,jdbcType=BIGINT},
+      </if>
+      <if test="deoPaymentdate != null">
+        #{deoPaymentdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deoPaymentmethod != null">
+        #{deoPaymentmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="deoPaymethod != null">
+        #{deoPaymethod,jdbcType=VARCHAR},
+      </if>
+      <if test="deoPickupdate != null">
+        #{deoPickupdate,jdbcType=VARCHAR},
+      </if>
+      <if test="deoPickupmethod != null">
+        #{deoPickupmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="deoPrint != null">
+        #{deoPrint,jdbcType=SMALLINT},
+      </if>
+      <if test="deoProstatsus != null">
+        #{deoProstatsus,jdbcType=VARCHAR},
+      </if>
+      <if test="deoProstatuscode != null">
+        #{deoProstatuscode,jdbcType=INTEGER},
+      </if>
+      <if test="deoRate != null">
+        #{deoRate,jdbcType=DOUBLE},
+      </if>
+      <if test="deoRemark != null">
+        #{deoRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="deoRequirepaydate != null">
+        #{deoRequirepaydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deoRiskmethod != null">
+        #{deoRiskmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="deoSalecode != null">
+        #{deoSalecode,jdbcType=VARCHAR},
+      </if>
+      <if test="deoSalepocode != null">
+        #{deoSalepocode,jdbcType=VARCHAR},
+      </if>
+      <if test="deoShipdate != null">
+        #{deoShipdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deoStatus != null">
+        #{deoStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="deoStatuscode != null">
+        #{deoStatuscode,jdbcType=INTEGER},
+      </if>
+      <if test="deoTaxpaymentmethod != null">
+        #{deoTaxpaymentmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="deoTervendaddress != null">
+        #{deoTervendaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="deoTervendor != null">
+        #{deoTervendor,jdbcType=VARCHAR},
+      </if>
+      <if test="deoTervenduu != null">
+        #{deoTervenduu,jdbcType=BIGINT},
+      </if>
+      <if test="deoTotalamount != null">
+        #{deoTotalamount,jdbcType=DOUBLE},
+      </if>
+      <if test="deoTotalpayment != null">
+        #{deoTotalpayment,jdbcType=DOUBLE},
+      </if>
+      <if test="deoUsdpayment != null">
+        #{deoUsdpayment,jdbcType=DOUBLE},
+      </if>
+      <if test="deoUsertel != null">
+        #{deoUsertel,jdbcType=VARCHAR},
+      </if>
+      <if test="deoUseruu != null">
+        #{deoUseruu,jdbcType=BIGINT},
+      </if>
+      <if test="deoVendorenuu != null">
+        #{deoVendorenuu,jdbcType=BIGINT},
+      </if>
+      <if test="deoVendtel != null">
+        #{deoVendtel,jdbcType=VARCHAR},
+      </if>
+      <if test="deoVenduser != null">
+        #{deoVenduser,jdbcType=VARCHAR},
+      </if>
+      <if test="deoVenduseruu != null">
+        #{deoVenduseruu,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.usoft.b2b.manage.domain.PurcDeputyorders">
+    update purc$deputyorders
+    <set>
+      <if test="deoActualpaydate != null">
+        deo_actualpaydate = #{deoActualpaydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deoActusdpayment != null">
+        deo_actusdpayment = #{deoActusdpayment,jdbcType=DOUBLE},
+      </if>
+      <if test="deoBankaccount != null">
+        deo_bankaccount = #{deoBankaccount,jdbcType=VARCHAR},
+      </if>
+      <if test="deoBankaddress != null">
+        deo_bankaddress = #{deoBankaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="deoBankcode != null">
+        deo_bankcode = #{deoBankcode,jdbcType=VARCHAR},
+      </if>
+      <if test="deoBankname != null">
+        deo_bankname = #{deoBankname,jdbcType=VARCHAR},
+      </if>
+      <if test="deoCode != null">
+        deo_code = #{deoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="deoCompanyname != null">
+        deo_companyname = #{deoCompanyname,jdbcType=VARCHAR},
+      </if>
+      <if test="deoCurrency != null">
+        deo_currency = #{deoCurrency,jdbcType=VARCHAR},
+      </if>
+      <if test="deoCustomer != null">
+        deo_customer = #{deoCustomer,jdbcType=VARCHAR},
+      </if>
+      <if test="deoDate != null">
+        deo_date = #{deoDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deoDeliverydate != null">
+        deo_deliverydate = #{deoDeliverydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deoDeliverymethod != null">
+        deo_deliverymethod = #{deoDeliverymethod,jdbcType=VARCHAR},
+      </if>
+      <if test="deoDeputyname != null">
+        deo_deputyname = #{deoDeputyname,jdbcType=VARCHAR},
+      </if>
+      <if test="deoDeputyuu != null">
+        deo_deputyuu = #{deoDeputyuu,jdbcType=BIGINT},
+      </if>
+      <if test="deoDownloadstatus != null">
+        deo_downloadstatus = #{deoDownloadstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="deoEnaddress != null">
+        deo_enaddress = #{deoEnaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="deoEnfax != null">
+        deo_enfax = #{deoEnfax,jdbcType=VARCHAR},
+      </if>
+      <if test="deoEntrydate != null">
+        deo_entrydate = #{deoEntrydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deoEntrystatus != null">
+        deo_entrystatus = #{deoEntrystatus,jdbcType=VARCHAR},
+      </if>
+      <if test="deoEnuu != null">
+        deo_enuu = #{deoEnuu,jdbcType=BIGINT},
+      </if>
+      <if test="deoErpdate != null">
+        deo_erpdate = #{deoErpdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deoErpid != null">
+        deo_erpid = #{deoErpid,jdbcType=BIGINT},
+      </if>
+      <if test="deoGoodspacking != null">
+        deo_goodspacking = #{deoGoodspacking,jdbcType=VARCHAR},
+      </if>
+      <if test="deoLegalrepresent != null">
+        deo_legalrepresent = #{deoLegalrepresent,jdbcType=VARCHAR},
+      </if>
+      <if test="deoMadealcode != null">
+        deo_madealcode = #{deoMadealcode,jdbcType=VARCHAR},
+      </if>
+      <if test="deoMadealdate != null">
+        deo_madealdate = #{deoMadealdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deoOrderamount != null">
+        deo_orderamount = #{deoOrderamount,jdbcType=DOUBLE},
+      </if>
+      <if test="deoOtherdata != null">
+        deo_otherdata = #{deoOtherdata,jdbcType=VARCHAR},
+      </if>
+      <if test="deoPaycomaddress != null">
+        deo_paycomaddress = #{deoPaycomaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="deoPaycomname != null">
+        deo_paycomname = #{deoPaycomname,jdbcType=VARCHAR},
+      </if>
+      <if test="deoPaydate != null">
+        deo_paydate = #{deoPaydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deoPaydeldate != null">
+        deo_paydeldate = #{deoPaydeldate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deoPaymentcomenuu != null">
+        deo_paymentcomenuu = #{deoPaymentcomenuu,jdbcType=BIGINT},
+      </if>
+      <if test="deoPaymentdate != null">
+        deo_paymentdate = #{deoPaymentdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deoPaymentmethod != null">
+        deo_paymentmethod = #{deoPaymentmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="deoPaymethod != null">
+        deo_paymethod = #{deoPaymethod,jdbcType=VARCHAR},
+      </if>
+      <if test="deoPickupdate != null">
+        deo_pickupdate = #{deoPickupdate,jdbcType=VARCHAR},
+      </if>
+      <if test="deoPickupmethod != null">
+        deo_pickupmethod = #{deoPickupmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="deoPrint != null">
+        deo_print = #{deoPrint,jdbcType=SMALLINT},
+      </if>
+      <if test="deoProstatsus != null">
+        deo_prostatsus = #{deoProstatsus,jdbcType=VARCHAR},
+      </if>
+      <if test="deoProstatuscode != null">
+        deo_prostatuscode = #{deoProstatuscode,jdbcType=INTEGER},
+      </if>
+      <if test="deoRate != null">
+        deo_rate = #{deoRate,jdbcType=DOUBLE},
+      </if>
+      <if test="deoRemark != null">
+        deo_remark = #{deoRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="deoRequirepaydate != null">
+        deo_requirepaydate = #{deoRequirepaydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deoRiskmethod != null">
+        deo_riskmethod = #{deoRiskmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="deoSalecode != null">
+        deo_salecode = #{deoSalecode,jdbcType=VARCHAR},
+      </if>
+      <if test="deoSalepocode != null">
+        deo_salepocode = #{deoSalepocode,jdbcType=VARCHAR},
+      </if>
+      <if test="deoShipdate != null">
+        deo_shipdate = #{deoShipdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deoStatus != null">
+        deo_status = #{deoStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="deoStatuscode != null">
+        deo_statuscode = #{deoStatuscode,jdbcType=INTEGER},
+      </if>
+      <if test="deoTaxpaymentmethod != null">
+        deo_taxpaymentmethod = #{deoTaxpaymentmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="deoTervendaddress != null">
+        deo_tervendaddress = #{deoTervendaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="deoTervendor != null">
+        deo_tervendor = #{deoTervendor,jdbcType=VARCHAR},
+      </if>
+      <if test="deoTervenduu != null">
+        deo_tervenduu = #{deoTervenduu,jdbcType=BIGINT},
+      </if>
+      <if test="deoTotalamount != null">
+        deo_totalamount = #{deoTotalamount,jdbcType=DOUBLE},
+      </if>
+      <if test="deoTotalpayment != null">
+        deo_totalpayment = #{deoTotalpayment,jdbcType=DOUBLE},
+      </if>
+      <if test="deoUsdpayment != null">
+        deo_usdpayment = #{deoUsdpayment,jdbcType=DOUBLE},
+      </if>
+      <if test="deoUsertel != null">
+        deo_usertel = #{deoUsertel,jdbcType=VARCHAR},
+      </if>
+      <if test="deoUseruu != null">
+        deo_useruu = #{deoUseruu,jdbcType=BIGINT},
+      </if>
+      <if test="deoVendorenuu != null">
+        deo_vendorenuu = #{deoVendorenuu,jdbcType=BIGINT},
+      </if>
+      <if test="deoVendtel != null">
+        deo_vendtel = #{deoVendtel,jdbcType=VARCHAR},
+      </if>
+      <if test="deoVenduser != null">
+        deo_venduser = #{deoVenduser,jdbcType=VARCHAR},
+      </if>
+      <if test="deoVenduseruu != null">
+        deo_venduseruu = #{deoVenduseruu,jdbcType=BIGINT},
+      </if>
+    </set>
+    where deo_id = #{deoId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.usoft.b2b.manage.domain.PurcDeputyorders">
+    update purc$deputyorders
+    set deo_actualpaydate = #{deoActualpaydate,jdbcType=TIMESTAMP},
+      deo_actusdpayment = #{deoActusdpayment,jdbcType=DOUBLE},
+      deo_bankaccount = #{deoBankaccount,jdbcType=VARCHAR},
+      deo_bankaddress = #{deoBankaddress,jdbcType=VARCHAR},
+      deo_bankcode = #{deoBankcode,jdbcType=VARCHAR},
+      deo_bankname = #{deoBankname,jdbcType=VARCHAR},
+      deo_code = #{deoCode,jdbcType=VARCHAR},
+      deo_companyname = #{deoCompanyname,jdbcType=VARCHAR},
+      deo_currency = #{deoCurrency,jdbcType=VARCHAR},
+      deo_customer = #{deoCustomer,jdbcType=VARCHAR},
+      deo_date = #{deoDate,jdbcType=TIMESTAMP},
+      deo_deliverydate = #{deoDeliverydate,jdbcType=TIMESTAMP},
+      deo_deliverymethod = #{deoDeliverymethod,jdbcType=VARCHAR},
+      deo_deputyname = #{deoDeputyname,jdbcType=VARCHAR},
+      deo_deputyuu = #{deoDeputyuu,jdbcType=BIGINT},
+      deo_downloadstatus = #{deoDownloadstatus,jdbcType=VARCHAR},
+      deo_enaddress = #{deoEnaddress,jdbcType=VARCHAR},
+      deo_enfax = #{deoEnfax,jdbcType=VARCHAR},
+      deo_entrydate = #{deoEntrydate,jdbcType=TIMESTAMP},
+      deo_entrystatus = #{deoEntrystatus,jdbcType=VARCHAR},
+      deo_enuu = #{deoEnuu,jdbcType=BIGINT},
+      deo_erpdate = #{deoErpdate,jdbcType=TIMESTAMP},
+      deo_erpid = #{deoErpid,jdbcType=BIGINT},
+      deo_goodspacking = #{deoGoodspacking,jdbcType=VARCHAR},
+      deo_legalrepresent = #{deoLegalrepresent,jdbcType=VARCHAR},
+      deo_madealcode = #{deoMadealcode,jdbcType=VARCHAR},
+      deo_madealdate = #{deoMadealdate,jdbcType=TIMESTAMP},
+      deo_orderamount = #{deoOrderamount,jdbcType=DOUBLE},
+      deo_otherdata = #{deoOtherdata,jdbcType=VARCHAR},
+      deo_paycomaddress = #{deoPaycomaddress,jdbcType=VARCHAR},
+      deo_paycomname = #{deoPaycomname,jdbcType=VARCHAR},
+      deo_paydate = #{deoPaydate,jdbcType=TIMESTAMP},
+      deo_paydeldate = #{deoPaydeldate,jdbcType=TIMESTAMP},
+      deo_paymentcomenuu = #{deoPaymentcomenuu,jdbcType=BIGINT},
+      deo_paymentdate = #{deoPaymentdate,jdbcType=TIMESTAMP},
+      deo_paymentmethod = #{deoPaymentmethod,jdbcType=VARCHAR},
+      deo_paymethod = #{deoPaymethod,jdbcType=VARCHAR},
+      deo_pickupdate = #{deoPickupdate,jdbcType=VARCHAR},
+      deo_pickupmethod = #{deoPickupmethod,jdbcType=VARCHAR},
+      deo_print = #{deoPrint,jdbcType=SMALLINT},
+      deo_prostatsus = #{deoProstatsus,jdbcType=VARCHAR},
+      deo_prostatuscode = #{deoProstatuscode,jdbcType=INTEGER},
+      deo_rate = #{deoRate,jdbcType=DOUBLE},
+      deo_remark = #{deoRemark,jdbcType=VARCHAR},
+      deo_requirepaydate = #{deoRequirepaydate,jdbcType=TIMESTAMP},
+      deo_riskmethod = #{deoRiskmethod,jdbcType=VARCHAR},
+      deo_salecode = #{deoSalecode,jdbcType=VARCHAR},
+      deo_salepocode = #{deoSalepocode,jdbcType=VARCHAR},
+      deo_shipdate = #{deoShipdate,jdbcType=TIMESTAMP},
+      deo_status = #{deoStatus,jdbcType=VARCHAR},
+      deo_statuscode = #{deoStatuscode,jdbcType=INTEGER},
+      deo_taxpaymentmethod = #{deoTaxpaymentmethod,jdbcType=VARCHAR},
+      deo_tervendaddress = #{deoTervendaddress,jdbcType=VARCHAR},
+      deo_tervendor = #{deoTervendor,jdbcType=VARCHAR},
+      deo_tervenduu = #{deoTervenduu,jdbcType=BIGINT},
+      deo_totalamount = #{deoTotalamount,jdbcType=DOUBLE},
+      deo_totalpayment = #{deoTotalpayment,jdbcType=DOUBLE},
+      deo_usdpayment = #{deoUsdpayment,jdbcType=DOUBLE},
+      deo_usertel = #{deoUsertel,jdbcType=VARCHAR},
+      deo_useruu = #{deoUseruu,jdbcType=BIGINT},
+      deo_vendorenuu = #{deoVendorenuu,jdbcType=BIGINT},
+      deo_vendtel = #{deoVendtel,jdbcType=VARCHAR},
+      deo_venduser = #{deoVenduser,jdbcType=VARCHAR},
+      deo_venduseruu = #{deoVenduseruu,jdbcType=BIGINT}
+    where deo_id = #{deoId,jdbcType=BIGINT}
+  </update>
+</mapper>

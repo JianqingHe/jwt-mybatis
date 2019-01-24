@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+      
+    <context id="testTables" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+        <jdbcConnection
+                driverClass="com.mysql.jdbc.Driver"
+                connectionURL="jdbc:mysql://188.131.128.107:3306/b2b_mysql_test?characterEncoding=UTF-8"
+                userId="sa"
+                password="select111***">
+        </jdbcConnection> 
+
+        <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和 
+            NUMERIC 类型解析为java.math.BigDecimal -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!-- targetProject:生成PO类的位置 -->
+        <javaModelGenerator targetPackage="com.usoft.b2b.manage.domain"
+            targetProject="./src/main/java">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false" />
+            <!-- 从数据库返回的值被清理前后的空格 -->
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <!-- targetProject:mapper映射文件生成的位置 -->
+        <sqlMapGenerator targetPackage="mapper"
+            targetProject="./src/main/resources">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false" />
+        </sqlMapGenerator>
+        <!-- targetPackage：mapper接口生成的位置 -->
+        <javaClientGenerator type="XMLMAPPER"
+            targetPackage="com.usoft.b2b.manage.mapper"
+            targetProject="./src/main/java">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false" />
+        </javaClientGenerator>
+        <!-- 指定数据库表 -->
+        <table tableName="sec$users" schema=""
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="user_uu" sqlStatement="MySql" identity="true"/>
+            <ignoreColumn column="user_imid"/>
+            <ignoreColumn column="user_idcode"/>
+            <ignoreColumn column="enable"/>
+            <ignoreColumn column="issys"/>
+        </table>
+        <table tableName="sec$enterprises" schema=""
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <ignoreColumn column="en_accesssecret"/>
+            <ignoreColumn column="en_businesscodeimg"/>
+            <ignoreColumn column="en_contactemail"/>
+            <ignoreColumn column="en_contactman"/>
+            <ignoreColumn column="en_contacttel"/>
+            <ignoreColumn column="en_emcount"/>
+            <ignoreColumn column="en_adminpassword"/>
+            <ignoreColumn column="en_area"/>
+            <ignoreColumn column="en_brands"/>
+            <ignoreColumn column="en_corporation"/>
+            <ignoreColumn column="en_deliveraddr"/>
+            <ignoreColumn column="en_email"/>
+            <ignoreColumn column="en_fax"/>
+            <ignoreColumn column="en_industry"/>
+            <ignoreColumn column="en_info"/>
+            <ignoreColumn column="en_iserp"/>
+            <ignoreColumn column="en_management"/>
+            <ignoreColumn column="en_masterid"/>
+            <ignoreColumn column="en_products"/>
+            <ignoreColumn column="en_registercapital"/>
+            <ignoreColumn column="en_saassendstatus"/>
+            <ignoreColumn column="en_saasstatus"/>
+            <ignoreColumn column="en_sendstatus"/>
+            <ignoreColumn column="en_saasurl"/>
+            <ignoreColumn column="en_status"/>
+            <ignoreColumn column="en_taxcode"/>
+            <ignoreColumn column="en_tel"/>
+            <ignoreColumn column="en_shortname"/>
+            <ignoreColumn column="en_url"/>
+            <ignoreColumn column="enable"/>
+            <ignoreColumn column="en_enbank"/>
+            <ignoreColumn column="en_logurl"/>
+            <ignoreColumn column="en_prodpurc"/>
+            <ignoreColumn column="en_prodsale"/>
+            <ignoreColumn column="en_profession"/>
+            <ignoreColumn column="en_tags"/>
+            <ignoreColumn column="en_weight"/>
+            <ignoreColumn column="en_bussinesscodeattach"/>
+            <ignoreColumn column="en_invitesource"/>
+            <ignoreColumn column="en_invitetime"/>
+            <ignoreColumn column="en_inviteuu"/>
+            <ignoreColumn column="en_inviteuseruu"/>
+        </table>
+        <table tableName="purc$deputyorders"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               schema=""/>
+        <table tableName="v_invites"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               schema=""/>
+        <table tableName="listen$erp"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               schema=""/>
+        <table tableName="log$error"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               schema=""/>
+        <table tableName="purc$notice$record"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               schema=""/>
+        <table tableName="uas$schedular"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               schema=""/>
+        <table tableName="users"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               schema=""/>
+    </context>
+</generatorConfiguration>

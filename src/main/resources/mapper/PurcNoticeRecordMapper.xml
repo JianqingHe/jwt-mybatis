@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.usoft.b2b.manage.mapper.PurcNoticeRecordMapper">
+  <resultMap id="BaseResultMap" type="com.usoft.b2b.manage.domain.PurcNoticeRecord">
+    <id column="no_id" jdbcType="BIGINT" property="noId" />
+    <result column="no_date" jdbcType="TIMESTAMP" property="noDate" />
+    <result column="no_describe" jdbcType="VARCHAR" property="noDescribe" />
+    <result column="no_enname" jdbcType="VARCHAR" property="noEnname" />
+    <result column="no_enuu" jdbcType="BIGINT" property="noEnuu" />
+    <result column="no_kind" jdbcType="VARCHAR" property="noKind" />
+    <result column="no_errcount" jdbcType="INTEGER" property="noErrcount" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    no_id, no_date, no_describe, no_enname, no_enuu, no_kind, no_errcount
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from purc$notice$record
+    where no_id = #{noId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from purc$notice$record
+    where no_id = #{noId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.usoft.b2b.manage.domain.PurcNoticeRecord">
+    insert into purc$notice$record (no_id, no_date, no_describe, 
+      no_enname, no_enuu, no_kind, 
+      no_errcount)
+    values (#{noId,jdbcType=BIGINT}, #{noDate,jdbcType=TIMESTAMP}, #{noDescribe,jdbcType=VARCHAR}, 
+      #{noEnname,jdbcType=VARCHAR}, #{noEnuu,jdbcType=BIGINT}, #{noKind,jdbcType=VARCHAR}, 
+      #{noErrcount,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.usoft.b2b.manage.domain.PurcNoticeRecord">
+    insert into purc$notice$record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="noId != null">
+        no_id,
+      </if>
+      <if test="noDate != null">
+        no_date,
+      </if>
+      <if test="noDescribe != null">
+        no_describe,
+      </if>
+      <if test="noEnname != null">
+        no_enname,
+      </if>
+      <if test="noEnuu != null">
+        no_enuu,
+      </if>
+      <if test="noKind != null">
+        no_kind,
+      </if>
+      <if test="noErrcount != null">
+        no_errcount,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="noId != null">
+        #{noId,jdbcType=BIGINT},
+      </if>
+      <if test="noDate != null">
+        #{noDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="noDescribe != null">
+        #{noDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="noEnname != null">
+        #{noEnname,jdbcType=VARCHAR},
+      </if>
+      <if test="noEnuu != null">
+        #{noEnuu,jdbcType=BIGINT},
+      </if>
+      <if test="noKind != null">
+        #{noKind,jdbcType=VARCHAR},
+      </if>
+      <if test="noErrcount != null">
+        #{noErrcount,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.usoft.b2b.manage.domain.PurcNoticeRecord">
+    update purc$notice$record
+    <set>
+      <if test="noDate != null">
+        no_date = #{noDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="noDescribe != null">
+        no_describe = #{noDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="noEnname != null">
+        no_enname = #{noEnname,jdbcType=VARCHAR},
+      </if>
+      <if test="noEnuu != null">
+        no_enuu = #{noEnuu,jdbcType=BIGINT},
+      </if>
+      <if test="noKind != null">
+        no_kind = #{noKind,jdbcType=VARCHAR},
+      </if>
+      <if test="noErrcount != null">
+        no_errcount = #{noErrcount,jdbcType=INTEGER},
+      </if>
+    </set>
+    where no_id = #{noId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.usoft.b2b.manage.domain.PurcNoticeRecord">
+    update purc$notice$record
+    set no_date = #{noDate,jdbcType=TIMESTAMP},
+      no_describe = #{noDescribe,jdbcType=VARCHAR},
+      no_enname = #{noEnname,jdbcType=VARCHAR},
+      no_enuu = #{noEnuu,jdbcType=BIGINT},
+      no_kind = #{noKind,jdbcType=VARCHAR},
+      no_errcount = #{noErrcount,jdbcType=INTEGER}
+    where no_id = #{noId,jdbcType=BIGINT}
+  </update>
+</mapper>

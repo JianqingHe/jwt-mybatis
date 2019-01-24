@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.usoft.b2b.manage.mapper.LogErrorMapper">
+  <resultMap id="BaseResultMap" type="com.usoft.b2b.manage.domain.LogError">
+    <id column="log_id" jdbcType="BIGINT" property="logId" />
+    <result column="log_date" jdbcType="TIMESTAMP" property="logDate" />
+    <result column="log_enname" jdbcType="VARCHAR" property="logEnname" />
+    <result column="log_enuu" jdbcType="BIGINT" property="logEnuu" />
+    <result column="log_msg" jdbcType="VARCHAR" property="logMsg" />
+    <result column="log_url" jdbcType="VARCHAR" property="logUrl" />
+    <result column="log_uuid" jdbcType="VARCHAR" property="logUuid" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.usoft.b2b.manage.domain.LogError">
+    <result column="log_detail" jdbcType="LONGVARCHAR" property="logDetail" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    log_id, log_date, log_enname, log_enuu, log_msg, log_url, log_uuid
+  </sql>
+  <sql id="Blob_Column_List">
+    log_detail
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from log$error
+    where log_id = #{logId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from log$error
+    where log_id = #{logId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.usoft.b2b.manage.domain.LogError">
+    insert into log$error (log_id, log_date, log_enname, 
+      log_enuu, log_msg, log_url, 
+      log_uuid, log_detail)
+    values (#{logId,jdbcType=BIGINT}, #{logDate,jdbcType=TIMESTAMP}, #{logEnname,jdbcType=VARCHAR}, 
+      #{logEnuu,jdbcType=BIGINT}, #{logMsg,jdbcType=VARCHAR}, #{logUrl,jdbcType=VARCHAR}, 
+      #{logUuid,jdbcType=VARCHAR}, #{logDetail,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.usoft.b2b.manage.domain.LogError">
+    insert into log$error
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="logId != null">
+        log_id,
+      </if>
+      <if test="logDate != null">
+        log_date,
+      </if>
+      <if test="logEnname != null">
+        log_enname,
+      </if>
+      <if test="logEnuu != null">
+        log_enuu,
+      </if>
+      <if test="logMsg != null">
+        log_msg,
+      </if>
+      <if test="logUrl != null">
+        log_url,
+      </if>
+      <if test="logUuid != null">
+        log_uuid,
+      </if>
+      <if test="logDetail != null">
+        log_detail,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="logId != null">
+        #{logId,jdbcType=BIGINT},
+      </if>
+      <if test="logDate != null">
+        #{logDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logEnname != null">
+        #{logEnname,jdbcType=VARCHAR},
+      </if>
+      <if test="logEnuu != null">
+        #{logEnuu,jdbcType=BIGINT},
+      </if>
+      <if test="logMsg != null">
+        #{logMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="logUrl != null">
+        #{logUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="logUuid != null">
+        #{logUuid,jdbcType=VARCHAR},
+      </if>
+      <if test="logDetail != null">
+        #{logDetail,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.usoft.b2b.manage.domain.LogError">
+    update log$error
+    <set>
+      <if test="logDate != null">
+        log_date = #{logDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logEnname != null">
+        log_enname = #{logEnname,jdbcType=VARCHAR},
+      </if>
+      <if test="logEnuu != null">
+        log_enuu = #{logEnuu,jdbcType=BIGINT},
+      </if>
+      <if test="logMsg != null">
+        log_msg = #{logMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="logUrl != null">
+        log_url = #{logUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="logUuid != null">
+        log_uuid = #{logUuid,jdbcType=VARCHAR},
+      </if>
+      <if test="logDetail != null">
+        log_detail = #{logDetail,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where log_id = #{logId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.usoft.b2b.manage.domain.LogError">
+    update log$error
+    set log_date = #{logDate,jdbcType=TIMESTAMP},
+      log_enname = #{logEnname,jdbcType=VARCHAR},
+      log_enuu = #{logEnuu,jdbcType=BIGINT},
+      log_msg = #{logMsg,jdbcType=VARCHAR},
+      log_url = #{logUrl,jdbcType=VARCHAR},
+      log_uuid = #{logUuid,jdbcType=VARCHAR},
+      log_detail = #{logDetail,jdbcType=LONGVARCHAR}
+    where log_id = #{logId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.usoft.b2b.manage.domain.LogError">
+    update log$error
+    set log_date = #{logDate,jdbcType=TIMESTAMP},
+      log_enname = #{logEnname,jdbcType=VARCHAR},
+      log_enuu = #{logEnuu,jdbcType=BIGINT},
+      log_msg = #{logMsg,jdbcType=VARCHAR},
+      log_url = #{logUrl,jdbcType=VARCHAR},
+      log_uuid = #{logUuid,jdbcType=VARCHAR}
+    where log_id = #{logId,jdbcType=BIGINT}
+  </update>
+</mapper>

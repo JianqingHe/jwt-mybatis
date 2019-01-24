@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.usoft.b2b.manage.mapper.SecEnterprisesMapper">
+  <resultMap id="BaseResultMap" type="com.usoft.b2b.manage.domain.SecEnterprises">
+    <id column="en_uu" jdbcType="BIGINT" property="enUu" />
+    <result column="en_address" jdbcType="VARCHAR" property="enAddress" />
+    <result column="en_adminuu" jdbcType="BIGINT" property="enAdminuu" />
+    <result column="en_businesscode" jdbcType="VARCHAR" property="enBusinesscode" />
+    <result column="en_time" jdbcType="TIMESTAMP" property="enTime" />
+    <result column="en_name" jdbcType="VARCHAR" property="enName" />
+    <result column="en_type" jdbcType="VARCHAR" property="enType" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    en_uu, en_address, en_adminuu, en_businesscode, en_time, en_name, en_type
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sec$enterprises
+    where en_uu = #{enUu,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from sec$enterprises
+    where en_uu = #{enUu,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.usoft.b2b.manage.domain.SecEnterprises">
+    insert into sec$enterprises (en_uu, en_address, en_adminuu, 
+      en_businesscode, en_time, en_name, 
+      en_type)
+    values (#{enUu,jdbcType=BIGINT}, #{enAddress,jdbcType=VARCHAR}, #{enAdminuu,jdbcType=BIGINT}, 
+      #{enBusinesscode,jdbcType=VARCHAR}, #{enTime,jdbcType=TIMESTAMP}, #{enName,jdbcType=VARCHAR}, 
+      #{enType,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.usoft.b2b.manage.domain.SecEnterprises">
+    insert into sec$enterprises
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="enUu != null">
+        en_uu,
+      </if>
+      <if test="enAddress != null">
+        en_address,
+      </if>
+      <if test="enAdminuu != null">
+        en_adminuu,
+      </if>
+      <if test="enBusinesscode != null">
+        en_businesscode,
+      </if>
+      <if test="enTime != null">
+        en_time,
+      </if>
+      <if test="enName != null">
+        en_name,
+      </if>
+      <if test="enType != null">
+        en_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="enUu != null">
+        #{enUu,jdbcType=BIGINT},
+      </if>
+      <if test="enAddress != null">
+        #{enAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="enAdminuu != null">
+        #{enAdminuu,jdbcType=BIGINT},
+      </if>
+      <if test="enBusinesscode != null">
+        #{enBusinesscode,jdbcType=VARCHAR},
+      </if>
+      <if test="enTime != null">
+        #{enTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="enName != null">
+        #{enName,jdbcType=VARCHAR},
+      </if>
+      <if test="enType != null">
+        #{enType,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.usoft.b2b.manage.domain.SecEnterprises">
+    update sec$enterprises
+    <set>
+      <if test="enAddress != null">
+        en_address = #{enAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="enAdminuu != null">
+        en_adminuu = #{enAdminuu,jdbcType=BIGINT},
+      </if>
+      <if test="enBusinesscode != null">
+        en_businesscode = #{enBusinesscode,jdbcType=VARCHAR},
+      </if>
+      <if test="enTime != null">
+        en_time = #{enTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="enName != null">
+        en_name = #{enName,jdbcType=VARCHAR},
+      </if>
+      <if test="enType != null">
+        en_type = #{enType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where en_uu = #{enUu,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.usoft.b2b.manage.domain.SecEnterprises">
+    update sec$enterprises
+    set en_address = #{enAddress,jdbcType=VARCHAR},
+      en_adminuu = #{enAdminuu,jdbcType=BIGINT},
+      en_businesscode = #{enBusinesscode,jdbcType=VARCHAR},
+      en_time = #{enTime,jdbcType=TIMESTAMP},
+      en_name = #{enName,jdbcType=VARCHAR},
+      en_type = #{enType,jdbcType=VARCHAR}
+    where en_uu = #{enUu,jdbcType=BIGINT}
+  </update>
+</mapper>
